@@ -14,13 +14,17 @@ struct Books: Decodable {
 struct Book: Decodable {
     let bookId: String?
     let bookName: String?
-    let text: String?
+    let publishedDate: String?
+    let author: String?
+    let description: String?
     let image: String?
     
     private enum CodingKeys : String, CodingKey {
         case bookId = "book_id"
         case bookName = "book_name"
-        case text
+        case publishedDate = "published_date"
+        case author
+        case description
         case image
     }
 }

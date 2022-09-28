@@ -68,7 +68,9 @@ extension BooksViewController: UITableViewDelegate, UITableViewDataSource {
     }
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let books = viewModel.books.value[indexPath.row]
-        //self.moveDetail(feed: feed)
+        let book = viewModel.books.value[indexPath.row]
+        let bookDetailViewController = BookDetailViewController.load(from: .main)
+        bookDetailViewController.bookData = book
+        self.navigationController?.pushViewController(bookDetailViewController, animated: true)
     }
 }

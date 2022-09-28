@@ -9,7 +9,7 @@ import Foundation
 
 /// Enum for api end points
 enum Endpoint: String {
-    case books = "4e6a999c-813b-4e86-9af9-a47a7d82301e"
+    case books = "48d1cc9f-b6be-42ec-9c69-81787a391b98"
 }
 
 /// Enum for possible error cases
@@ -38,7 +38,6 @@ extension NetworkError {
 /// Singleton class for Netwoking
 class NetworkManager {
     static let shared = NetworkManager()
-    
     private init() {
     }    
     
@@ -65,7 +64,9 @@ class NetworkManager {
         }
         dataTask.resume()
     }
-    
+}
+
+extension NetworkManager {
     /// Generic func to parse the response data into model
     /// - Parameters:
     ///   - data: response data from api
@@ -78,5 +79,4 @@ class NetworkManager {
             completionHandler(.failure(NetworkError.decodeError))
         }
     }
-    
 }

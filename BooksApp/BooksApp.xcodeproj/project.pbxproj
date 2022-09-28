@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0A823CD228E40022008CEF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823CD128E40022008CEF4C /* AppDelegate.swift */; };
 		0A823CD428E40022008CEF4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823CD328E40022008CEF4C /* SceneDelegate.swift */; };
-		0A823CD628E40022008CEF4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823CD528E40022008CEF4C /* ViewController.swift */; };
 		0A823CD928E40022008CEF4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A823CD728E40022008CEF4C /* Main.storyboard */; };
 		0A823CDB28E40024008CEF4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A823CDA28E40024008CEF4C /* Assets.xcassets */; };
 		0A823CDE28E40024008CEF4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A823CDC28E40024008CEF4C /* LaunchScreen.storyboard */; };
@@ -29,6 +28,7 @@
 		0A823D2228E45767008CEF4C /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823D2128E45767008CEF4C /* MockService.swift */; };
 		0A823D2528E4593E008CEF4C /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A823D2428E4593E008CEF4C /* books.json */; };
 		0A823D2728E4660A008CEF4C /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823D2628E4660A008CEF4C /* BookDetailViewController.swift */; };
+		0A823D2928E482EC008CEF4C /* StoryBoardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823D2828E482EC008CEF4C /* StoryBoardHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,6 @@
 		0A823CCE28E40022008CEF4C /* BooksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BooksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A823CD128E40022008CEF4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A823CD328E40022008CEF4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0A823CD528E40022008CEF4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0A823CD828E40022008CEF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A823CDA28E40024008CEF4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A823CDD28E40024008CEF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		0A823D2128E45767008CEF4C /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 		0A823D2428E4593E008CEF4C /* books.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = books.json; sourceTree = "<group>"; };
 		0A823D2628E4660A008CEF4C /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		0A823D2828E482EC008CEF4C /* StoryBoardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,6 @@
 				0A823D1128E40062008CEF4C /* Utils */,
 				0A823CD128E40022008CEF4C /* AppDelegate.swift */,
 				0A823CD328E40022008CEF4C /* SceneDelegate.swift */,
-				0A823CD528E40022008CEF4C /* ViewController.swift */,
 				0A823CDA28E40024008CEF4C /* Assets.xcassets */,
 				0A823CDF28E40024008CEF4C /* Info.plist */,
 			);
@@ -240,6 +239,7 @@
 				0A823D1928E4070A008CEF4C /* Constants.swift */,
 				0A823D1B28E420DF008CEF4C /* Observable.swift */,
 				0A823D1F28E44951008CEF4C /* UIViewController+Extensions.swift */,
+				0A823D2828E482EC008CEF4C /* StoryBoardHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -405,13 +405,13 @@
 				0A823D1E28E442CA008CEF4C /* BooksTableViewCell.swift in Sources */,
 				0A823D1C28E420DF008CEF4C /* Observable.swift in Sources */,
 				0A823D2028E44951008CEF4C /* UIViewController+Extensions.swift in Sources */,
-				0A823CD628E40022008CEF4C /* ViewController.swift in Sources */,
 				0A823D0828E40045008CEF4C /* BooksViewModel.swift in Sources */,
 				0A823CD228E40022008CEF4C /* AppDelegate.swift in Sources */,
 				0A823D1328E40062008CEF4C /* NetworkManager.swift in Sources */,
 				0A823CD428E40022008CEF4C /* SceneDelegate.swift in Sources */,
 				0A823D1A28E4070A008CEF4C /* Constants.swift in Sources */,
 				0A823D2228E45767008CEF4C /* MockService.swift in Sources */,
+				0A823D2928E482EC008CEF4C /* StoryBoardHelper.swift in Sources */,
 				0A823D0928E40045008CEF4C /* Books.swift in Sources */,
 				0A823D1428E40062008CEF4C /* UIImageView+Extensions.swift in Sources */,
 				0A823D1828E40570008CEF4C /* APIService.swift in Sources */,

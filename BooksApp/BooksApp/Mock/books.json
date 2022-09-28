@@ -2,50 +2,50 @@
   "books": [
     {
       "book_id": "1",
-      "book_name": "John",
-      "chapter": 3,
-      "verse": 16,
-      "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+      "book_name": "The India Story",
+      "published_date": "03-02-2022",
+      "author": "Bimal Jalal",
+      "description": "Over a period of five years, The India Story has grown to become one of the hippest cultural events in Kolkata.",
       "image": "https://png.pngtree.com/png-vector/20190505/ourmid/pngtree-vector-book-icon-png-image_1022249.jpg"
     },
     {
       "book_id": "2",
-      "book_name": "mathew",
-      "chapter": 3,
-      "verse": 16,
-      "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+      "book_name": "Listen to Your Heart: The London Adventure",
+      "published_date": "13-03-2022",
+      "author": "Ruskin Bond",
+      "description": "Listen to Your Heart is a short, heartfelt memoir by Ruskin Bond which is the fifth and final book in the series offering us an insight into Ruskin's childhood.",
       "image": "https://png.pngtree.com/png-vector/20190417/ourmid/pngtree-vector-book-icon-png-image_947973.jpg"
     },
     {
       "book_id": "3",
-      "book_name": "sankar",
-      "chapter": 3,
-      "verse": 16,
-      "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
-      "image": "https://png.pngtree.com/png-vector/20191028/ourmid/pngtree-book-icon-for-your-design-websites-and-projects-png-image_1888916.jpg"
+      "book_name": "Business of Sports: The Winning Formula for Success’",
+      "published_date": "13-01-2022",
+      "author": "Vinit Karnik",
+      "description": "IISM has launched India's first-ever book on Sports Marketing titled “Business of Sports: The Winning Formula for Success.",
+      "image": "https://png.pngtree.com/png-vector/20220612/ourmid/pngtree-education-logo-design-with-combination-of-pencil-book-and-leaf-icon-png-image_5032158.png"
     },
     {
       "book_id": "4",
-      "book_name": "sarath",
-      "chapter": 3,
-      "verse": 16,
-      "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+      "book_name": "A Place Called Home",
+      "published_date": "13-12-2022",
+      "author": "Preeti Shenoy",
+      "description": "A Place called Home is a realistic romance novel with grit and finesse. It had a very morally grey plot and a sense of charm to it.",
       "image": "https://png.pngtree.com/png-vector/20190419/ourmid/pngtree-vector-book-icon-png-image_958564.jpg"
     },
     {
       "book_id": "5",
-      "book_name": "kumar",
-      "chapter": 3,
-      "verse": 16,
-      "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+      "book_name": "Modi @20: Dreams Meeting Delivery",
+      "published_date": "10-02-2022",
+      "author": "VP Venkaiah Naidu",
+      "description": "MODI @20 DREAMS MEET DELIVERY Published by BlueKraft Digital Foundation. The rise of Narendra Modi is a watershed movement in Indian Politics..",
       "image": "https://png.pngtree.com/element_our/20190528/ourmid/pngtree-book-icon-image_1144607.jpg"
     },
     {
       "book_id": "6",
-      "book_name": "singh",
-      "chapter": 3,
-      "verse": 16,
-      "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+      "book_name": "Queen of Fire",
+      "published_date": "11-02-2022",
+      "author": "Devika Rangachari",
+      "description": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
       "image": "https://png.pngtree.com/png-vector/20220412/ourmid/pngtree-toga-hat-on-books-with-black-brown-color-png-image_4539288.png"
     }
   ]

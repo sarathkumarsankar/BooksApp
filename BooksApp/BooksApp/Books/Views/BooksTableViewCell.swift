@@ -16,7 +16,7 @@ final class BooksTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setUpUI()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,11 +25,15 @@ final class BooksTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    private func setUpUI() {
+        booksImageView.setRoundCornerImage()
+    }
+    
     /// Update the cell
     /// - Parameter model: books model
     func configureCell(with model: Book) {
         bookNameLabel.text = model.bookName
-        bookDescriptionLabel.text = model.text
+        bookDescriptionLabel.text = model.description
         if let imageUrl = model.image {
             booksImageView.setImageUsingCache(withUrl: imageUrl)
         }

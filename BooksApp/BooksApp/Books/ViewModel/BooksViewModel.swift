@@ -14,13 +14,13 @@ class BooksViewModel {
     var errorMessage: Observable<String?> = Observable(nil)
     var books: Observable<[Book]> = Observable([])
 
-    // We can now inject a "mocked" version of NetworkManager for unit tests.
-    // This "mocked" version will confirm to NetworkManagerProtocol which we created earlier.
+    // We can now inject a "mocked" version of service for unit tests.
+    // This "mocked" version will confirm to BooksServiceProtocol which we created earlier.
     init(serviceManager: BooksServiceProtocol = APIService()) {
         self.serviceManager = serviceManager
     }
     
-    /// Get the books
+    /// Get the books list from API
     func getBooks() {
         serviceManager?.booksService(endPoint: .books, completionHandler: { result in
             switch result {
