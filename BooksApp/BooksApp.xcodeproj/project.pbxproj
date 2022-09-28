@@ -21,6 +21,14 @@
 		0A823D0A28E40045008CEF4C /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823D0728E40045008CEF4C /* BooksViewController.swift */; };
 		0A823D1328E40062008CEF4C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823D1028E40061008CEF4C /* NetworkManager.swift */; };
 		0A823D1428E40062008CEF4C /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823D1228E40062008CEF4C /* UIImageView+Extensions.swift */; };
+		0A823D1828E40570008CEF4C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823D1728E40570008CEF4C /* APIService.swift */; };
+		0A823D1A28E4070A008CEF4C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823D1928E4070A008CEF4C /* Constants.swift */; };
+		0A823D1C28E420DF008CEF4C /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823D1B28E420DF008CEF4C /* Observable.swift */; };
+		0A823D1E28E442CA008CEF4C /* BooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823D1D28E442CA008CEF4C /* BooksTableViewCell.swift */; };
+		0A823D2028E44951008CEF4C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823D1F28E44951008CEF4C /* UIViewController+Extensions.swift */; };
+		0A823D2228E45767008CEF4C /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823D2128E45767008CEF4C /* MockService.swift */; };
+		0A823D2528E4593E008CEF4C /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A823D2428E4593E008CEF4C /* books.json */; };
+		0A823D2728E4660A008CEF4C /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823D2628E4660A008CEF4C /* BookDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +67,14 @@
 		0A823D0728E40045008CEF4C /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		0A823D1028E40061008CEF4C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0A823D1228E40062008CEF4C /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		0A823D1728E40570008CEF4C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		0A823D1928E4070A008CEF4C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0A823D1B28E420DF008CEF4C /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		0A823D1D28E442CA008CEF4C /* BooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewCell.swift; sourceTree = "<group>"; };
+		0A823D1F28E44951008CEF4C /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		0A823D2128E45767008CEF4C /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
+		0A823D2428E4593E008CEF4C /* books.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = books.json; sourceTree = "<group>"; };
+		0A823D2628E4660A008CEF4C /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +125,8 @@
 		0A823CD028E40022008CEF4C /* BooksApp */ = {
 			isa = PBXGroup;
 			children = (
+				0A823D2328E45926008CEF4C /* Mock */,
+				0A823D1628E40515008CEF4C /* APIService */,
 				0A823D1528E40070008CEF4C /* StoryBoard */,
 				0A823D0128E40045008CEF4C /* Books */,
 				0A823D0B28E40058008CEF4C /* BookDetail */,
@@ -170,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				0A823D0728E40045008CEF4C /* BooksViewController.swift */,
+				0A823D1D28E442CA008CEF4C /* BooksTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +220,7 @@
 		0A823D0E28E40058008CEF4C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0A823D2628E4660A008CEF4C /* BookDetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +237,9 @@
 			isa = PBXGroup;
 			children = (
 				0A823D1228E40062008CEF4C /* UIImageView+Extensions.swift */,
+				0A823D1928E4070A008CEF4C /* Constants.swift */,
+				0A823D1B28E420DF008CEF4C /* Observable.swift */,
+				0A823D1F28E44951008CEF4C /* UIViewController+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -228,6 +251,23 @@
 				0A823CDC28E40024008CEF4C /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		0A823D1628E40515008CEF4C /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				0A823D1728E40570008CEF4C /* APIService.swift */,
+				0A823D2128E45767008CEF4C /* MockService.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		0A823D2328E45926008CEF4C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				0A823D2428E4593E008CEF4C /* books.json */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A823D2528E4593E008CEF4C /* books.json in Resources */,
 				0A823CDE28E40024008CEF4C /* LaunchScreen.storyboard in Resources */,
 				0A823CDB28E40024008CEF4C /* Assets.xcassets in Resources */,
 				0A823CD928E40022008CEF4C /* Main.storyboard in Resources */,
@@ -361,14 +402,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A823D1E28E442CA008CEF4C /* BooksTableViewCell.swift in Sources */,
+				0A823D1C28E420DF008CEF4C /* Observable.swift in Sources */,
+				0A823D2028E44951008CEF4C /* UIViewController+Extensions.swift in Sources */,
 				0A823CD628E40022008CEF4C /* ViewController.swift in Sources */,
 				0A823D0828E40045008CEF4C /* BooksViewModel.swift in Sources */,
 				0A823CD228E40022008CEF4C /* AppDelegate.swift in Sources */,
 				0A823D1328E40062008CEF4C /* NetworkManager.swift in Sources */,
 				0A823CD428E40022008CEF4C /* SceneDelegate.swift in Sources */,
+				0A823D1A28E4070A008CEF4C /* Constants.swift in Sources */,
+				0A823D2228E45767008CEF4C /* MockService.swift in Sources */,
 				0A823D0928E40045008CEF4C /* Books.swift in Sources */,
 				0A823D1428E40062008CEF4C /* UIImageView+Extensions.swift in Sources */,
+				0A823D1828E40570008CEF4C /* APIService.swift in Sources */,
 				0A823D0A28E40045008CEF4C /* BooksViewController.swift in Sources */,
+				0A823D2728E4660A008CEF4C /* BookDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

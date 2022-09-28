@@ -1,0 +1,52 @@
+{
+  "books": [
+    {
+      "book_id": "1",
+      "book_name": "John",
+      "chapter": 3,
+      "verse": 16,
+      "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+      "image": "https://png.pngtree.com/png-vector/20190505/ourmid/pngtree-vector-book-icon-png-image_1022249.jpg"
+    },
+    {
+      "book_id": "2",
+      "book_name": "mathew",
+      "chapter": 3,
+      "verse": 16,
+      "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+      "image": "https://png.pngtree.com/png-vector/20190417/ourmid/pngtree-vector-book-icon-png-image_947973.jpg"
+    },
+    {
+      "book_id": "3",
+      "book_name": "sankar",
+      "chapter": 3,
+      "verse": 16,
+      "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+      "image": "https://png.pngtree.com/png-vector/20191028/ourmid/pngtree-book-icon-for-your-design-websites-and-projects-png-image_1888916.jpg"
+    },
+    {
+      "book_id": "4",
+      "book_name": "sarath",
+      "chapter": 3,
+      "verse": 16,
+      "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+      "image": "https://png.pngtree.com/png-vector/20190419/ourmid/pngtree-vector-book-icon-png-image_958564.jpg"
+    },
+    {
+      "book_id": "5",
+      "book_name": "kumar",
+      "chapter": 3,
+      "verse": 16,
+      "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+      "image": "https://png.pngtree.com/element_our/20190528/ourmid/pngtree-book-icon-image_1144607.jpg"
+    },
+    {
+      "book_id": "6",
+      "book_name": "singh",
+      "chapter": 3,
+      "verse": 16,
+      "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+      "image": "https://png.pngtree.com/png-vector/20220412/ourmid/pngtree-toga-hat-on-books-with-black-brown-color-png-image_4539288.png"
+    }
+  ]
+}

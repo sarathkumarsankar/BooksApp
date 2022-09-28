@@ -17,7 +17,7 @@ extension UIImageView {
     
     /// To downlad image with image url
     ///  - Parameter urlString: image url string
-    func loadImageUsingCache(withUrl urlString: String) {
+    func setImageUsingCache(withUrl urlString: String) {
         
         /// check image already available in cache
         if let cachedImage = imageCache.object(forKey: urlString as NSString) as? UIImage {

@@ -8,6 +8,10 @@
 import Foundation
 
 struct Books: Decodable {
+    let books: [Book]?
+}
+
+struct Book: Decodable {
     let bookId: String?
     let bookName: String?
     let text: String?
