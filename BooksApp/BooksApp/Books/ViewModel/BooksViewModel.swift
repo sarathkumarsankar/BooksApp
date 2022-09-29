@@ -5,7 +5,6 @@
 //  Created by SarathKumar S on 27/09/22.
 //
 
-import UIKit
 
 /// View model for books View
 class BooksViewModel {
@@ -15,8 +14,7 @@ class BooksViewModel {
     var books: Observable<[Book]> = Observable([])
 
     // We can now inject a "mocked" version of service for unit tests.
-    // This "mocked" version will confirm to BooksServiceProtocol which we created earlier.
-    init(serviceManager: BooksServiceProtocol = APIService()) {
+    init(serviceManager: BooksServiceProtocol = BooksAPIService()) {
         self.serviceManager = serviceManager
     }
     

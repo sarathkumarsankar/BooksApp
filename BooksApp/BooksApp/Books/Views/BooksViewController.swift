@@ -8,13 +8,12 @@
 import UIKit
 
 final class BooksViewController: UIViewController {
-    private let viewModel = BooksViewModel()
+    var viewModel = BooksViewModel()
     @IBOutlet private weak var booksTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        setUpTableView()
         viewModel.getBooks()
         addObservers()
     }
@@ -39,38 +38,5 @@ final class BooksViewController: UIViewController {
             }
         }
     }
-    
-    private func setUpTableView() {
-        booksTableView.rowHeight = UITableView.automaticDimension
-        booksTableView.estimatedRowHeight = 80
-    }
 }
 
-// MARK: Delegate and datasorce methods
-extension BooksViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.books.value.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier:
-                                                        TableViewCellIdentifier.booksTableViewCell) as?
-                BooksTableViewCell else {
-            return UITableViewCell()
-        }
-        cell.configureCell(with: viewModel.books.value[indexPath.row])
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-        
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let book = viewModel.books.value[indexPath.row]
-        let bookDetailViewController = BookDetailViewController.load(from: .main)
-        bookDetailViewController.bookData = book
-        self.navigationController?.pushViewController(bookDetailViewController, animated: true)
-    }
-}

@@ -21,6 +21,7 @@ enum NetworkError: Error {
 }
 
 extension NetworkError {
+    /// Error message
     var errorDescription: String? {
         switch self {
         case .invalidURL:
@@ -46,10 +47,27 @@ class NetworkManager {
     ///   - _urlRequest: Url request(headers, http method)
     ///   - type: Place holder for model type
     ///   - completionHandler: result types which includes success and failure data
-     func excute<T : Decodable>(_urlRequest: URLRequest, type: T.Type, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) {
+     func excute<T : Decodable>(with endpoint: HTTPRequest, type: T.Type, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) {
         let urlSession = URLSession.shared
         
-        let dataTask = urlSession.dataTask(with: _urlRequest) { data, response, error in
+         var components = URLComponents()
+         components.scheme = endpoint.scheme
+         components.host = endpoint.baseURL
+         components.path = endpoint.path
+         components.queryItems = endpoint.parameters
+
+         guard let url = components.url else {
+             completionHandler(.failure(NetworkError.invalidURL))
+             return
+         }
+
+         var urlRequest = URLRequest(url: url)
+         urlRequest.httpMethod = endpoint.method
+         urlRequest.httpBody = endpoint.data
+
+         endpoint.headers?.forEach { urlRequest.addValue($0.header.value, forHTTPHeaderField: $0.header.field) }
+
+        let dataTask = urlSession.dataTask(with: urlRequest) { data, response, error in
             guard let responseStatus = response as? HTTPURLResponse, responseStatus.statusCode == 200 else {
                 completionHandler(.failure(NetworkError.responseError))
                 return

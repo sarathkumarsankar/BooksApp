@@ -8,7 +8,7 @@
 import Foundation
 
 struct BooksAPIConstants {
-    static let baseUrl = "https://run.mocky.io/v3/"
+    static let baseUrl = "run.mocky.io"
 }
 
 struct TableViewCellIdentifier {
