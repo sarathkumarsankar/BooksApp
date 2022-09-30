@@ -5,14 +5,15 @@
 //  Created by SarathKumar S on 27/09/22.
 //
 
+import Foundation
 
 /// View model for books View
 class BooksViewModel {
     
     private let serviceManager: BooksServiceProtocol?
-    var errorMessage: Observable<String?> = Observable(nil)
-    var books: Observable<[Book]> = Observable([])
-
+    var error: Observable<String?> = Observable(nil)
+    var booksCellViewModels: Observable<[BooksCellViewModel]> = Observable([])
+    
     // We can now inject a "mocked" version of service for unit tests.
     init(serviceManager: BooksServiceProtocol = BooksAPIService()) {
         self.serviceManager = serviceManager
@@ -23,11 +24,16 @@ class BooksViewModel {
         serviceManager?.booksService(endPoint: .books, completionHandler: { result in
             switch result {
             case .success(let result):
-                self.books.value = result.books ?? []
+                ///Map books into array  of cell viewModel
+                self.booksCellViewModels.value = result.books?.map { BooksCellViewModel(with: $0) } ?? []
             case .failure(let error):
-                self.errorMessage.value = error.errorDescription
+                self.error.value = error.errorDescription
             }
         })
     }
     
+    func getCellViewModel(at indexPath: IndexPath) -> BooksCellViewModel {
+        return booksCellViewModels.value[indexPath.row]
+    }
+
 }

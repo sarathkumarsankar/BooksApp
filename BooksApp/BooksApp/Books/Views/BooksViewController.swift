@@ -25,12 +25,12 @@ final class BooksViewController: UIViewController {
     
     /// Method for add observer to response and error
     private func addObservers() {
-        viewModel.books.bind { books in
+        viewModel.booksCellViewModels.bind { books in
             DispatchQueue.main.async() {
                 self.booksTableView.reloadData()
             }
         }
-        viewModel.errorMessage.bind { error in
+        viewModel.error.bind { error in
             if let error = error {
                 DispatchQueue.main.async() {
                     self.showAlert(error)

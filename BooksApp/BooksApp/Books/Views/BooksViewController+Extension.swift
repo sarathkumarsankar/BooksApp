@@ -12,7 +12,7 @@ import UIKit
 extension BooksViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.books.value.count
+        return viewModel.booksCellViewModels.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -21,20 +21,16 @@ extension BooksViewController: UITableViewDataSource {
                 BooksTableViewCell else {
             return UITableViewCell()
         }
-        cell.configureCell(with: viewModel.books.value[indexPath.row])
+        cell.cellViewModel = viewModel.getCellViewModel(at: indexPath)
         return cell
     }
 }
 
 // MARK: UITableView Delegate methods
 extension BooksViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-        
+            
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let book = viewModel.books.value[indexPath.row]
+        let book = viewModel.booksCellViewModels.value[indexPath.row].book
         let bookDetailViewController = BookDetailViewController.load(from: .main)
         bookDetailViewController.bookData = book
         self.navigationController?.pushViewController(bookDetailViewController, animated: true)

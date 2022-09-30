@@ -14,9 +14,19 @@ final class BooksTableViewCell: UITableViewCell {
     @IBOutlet private weak var bookNameLabel: UILabel!
     @IBOutlet private weak var bookDescriptionLabel: UILabel!
     
+    var cellViewModel: BooksCellViewModel? {
+        didSet {
+            bookNameLabel.text = cellViewModel?.title
+            bookDescriptionLabel.text = cellViewModel?.subtitle
+            if let imageUrl = cellViewModel?.image {
+                booksImageView.setImageUsingCache(withUrl: imageUrl)
+            }
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUpUI()
+        initView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,17 +35,8 @@ final class BooksTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    private func setUpUI() {
+    private func initView() {
         booksImageView.setRoundCornerImage()
     }
     
-    /// Update the cell
-    /// - Parameter model: books model
-    func configureCell(with model: Book) {
-        bookNameLabel.text = model.bookName
-        bookDescriptionLabel.text = model.description
-        if let imageUrl = model.image {
-            booksImageView.setImageUsingCache(withUrl: imageUrl)
-        }
-    }
 }
