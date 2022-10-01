@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 /// View model for books cell View
 class BooksCellViewModel {
@@ -25,7 +24,7 @@ class BooksCellViewModel {
         return self.book?.description ?? ""
     }
     
-    var image: String {
+    var imageUrString: String {
         return self.book?.image ?? ""
     }
 

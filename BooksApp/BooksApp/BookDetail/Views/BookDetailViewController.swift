@@ -16,7 +16,8 @@ final class BookDetailViewController: UIViewController {
     @IBOutlet private weak var descriptionLabel: UILabel!
     /// variable to hold passed data model
     var bookData: Book?
-
+    
+    /// ViewController life cycle- Called after the view has been loaded.
     override func viewDidLoad() {
         super.viewDidLoad()
         bookImageView.setRoundCornerImage()

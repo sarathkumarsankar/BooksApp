@@ -11,15 +11,16 @@ final class BooksViewController: UIViewController {
     var viewModel = BooksViewModel()
     @IBOutlet private weak var booksTableView: UITableView!
     
+    /// ViewController life cycle- Called after the view has been loaded.
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        updateUI()
         viewModel.getBooks()
         addObservers()
     }
     
-    /// set Ui
-    private func setUI() {
+    /// update Ui
+    private func updateUI() {
         self.title = ViewControllerTitle.booksVC
     }
     

@@ -8,13 +8,13 @@
 import Foundation
 
 /// View model for books View
-class BooksViewModel {
+final class BooksViewModel {
     
     private let serviceManager: BooksServiceProtocol?
     var error: Observable<String?> = Observable(nil)
     var booksCellViewModels: Observable<[BooksCellViewModel]> = Observable([])
     
-    // We can now inject a "mocked" version of service for unit tests.
+    // initializer
     init(serviceManager: BooksServiceProtocol = BooksAPIService()) {
         self.serviceManager = serviceManager
     }
@@ -32,6 +32,9 @@ class BooksViewModel {
         })
     }
     
+    /// returns cellViewModel based on tableview indexpath
+    /// - Parameter indexPath: Indexpath
+    /// - Returns: cell ciew model
     func getCellViewModel(at indexPath: IndexPath) -> BooksCellViewModel {
         return booksCellViewModels.value[indexPath.row]
     }
