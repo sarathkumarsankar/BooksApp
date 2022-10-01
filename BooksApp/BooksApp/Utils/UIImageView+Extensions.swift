@@ -17,8 +17,11 @@ extension UIImageView {
     
     /// To downlad image with image url
     ///  - Parameter urlString: image url string
-    func setImageUsingCache(withUrl urlString: String) {
-        
+    func setImageUsingCache(withUrl urlString: String?) {
+        guard let urlString = urlString else {
+            self.image = UIImage(named: "placeholder")
+            return
+        }
         /// check image already available in cache
         if let cachedImage = imageCache.object(forKey: urlString as NSString) as? UIImage {
             self.image = cachedImage
@@ -28,20 +31,23 @@ extension UIImageView {
         self.image = nil
         /// update imageview with placeholder image
         self.image = UIImage(named: "placeholder")
-        guard let url = URL(string: urlString) else { return }
-        let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-            if let data = data, let response = response, ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300, let image = UIImage(data: data) {
+        NetworkManager.shared.downloadImage(withUrl: urlString) { result in
+            switch result {
+            case .success(let result):
+                guard let image = UIImage(data: result) else {
+                    return
+                }
                 /// store image in cache
                 imageCache.setObject(image, forKey: urlString as NSString)
                 /// update imageview with downloaded image in main thread
                 DispatchQueue.main.async {
                     self.image = image
                 }
+            case .failure(_):
+                break
             }
-        }).resume()
+        }
     }
-    
 }
 
 extension UIImageView {

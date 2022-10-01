@@ -21,14 +21,18 @@ extension BooksViewController: UITableViewDataSource {
                 BooksTableViewCell else {
             return UITableViewCell()
         }
-        cell.cellViewModel = viewModel.getCellViewModel(at: indexPath)
+        cell.configureCell(cellViewModel: viewModel.getCellViewModel(at: indexPath))
         return cell
     }
 }
 
 // MARK: UITableView Delegate methods
 extension BooksViewController: UITableViewDelegate {
-            
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let book = viewModel.booksCellViewModels.value[indexPath.row].book
         let bookDetailViewController = BookDetailViewController.load(from: .main)

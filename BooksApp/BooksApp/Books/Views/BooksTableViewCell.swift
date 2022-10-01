@@ -8,22 +8,11 @@
 import UIKit
 
 final class BooksTableViewCell: UITableViewCell {
-    
     /// Private outlets
     @IBOutlet private weak var booksImageView: UIImageView!
     @IBOutlet private weak var bookNameLabel: UILabel!
     @IBOutlet private weak var bookDescriptionLabel: UILabel!
     
-    var cellViewModel: BooksCellViewModel? {
-        didSet {
-            bookNameLabel.text = cellViewModel?.title
-            bookDescriptionLabel.text = cellViewModel?.subtitle
-            if let imageUrl = cellViewModel?.image {
-                booksImageView.setImageUsingCache(withUrl: imageUrl)
-            }
-        }
-    }
-
     override func awakeFromNib() {
         super.awakeFromNib()
         initView()
@@ -35,6 +24,14 @@ final class BooksTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    /// Configure cell with data
+    /// - Parameter cellViewModel: BooksCell viewmodel
+    func configureCell(cellViewModel: BooksCellViewModel?) {
+        bookNameLabel.text = cellViewModel?.title
+        bookDescriptionLabel.text = cellViewModel?.subtitle
+        booksImageView.setImageUsingCache(withUrl: cellViewModel?.imageUrString)
+    }
+        
     private func initView() {
         booksImageView.setRoundCornerImage()
     }

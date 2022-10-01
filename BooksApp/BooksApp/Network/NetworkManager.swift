@@ -48,8 +48,6 @@ class NetworkManager {
     ///   - type: Place holder for model type
     ///   - completionHandler: result types which includes success and failure data
      func excute<T : Decodable>(with endpoint: HTTPRequest, type: T.Type, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) {
-        let urlSession = URLSession.shared
-        
          var components = URLComponents()
          components.scheme = endpoint.scheme
          components.host = endpoint.baseURL
@@ -66,19 +64,38 @@ class NetworkManager {
          urlRequest.httpBody = endpoint.data
 
          endpoint.headers?.forEach { urlRequest.addValue($0.header.value, forHTTPHeaderField: $0.header.field) }
-
-        let dataTask = urlSession.dataTask(with: urlRequest) { data, response, error in
+         dataTaskHandler(urlRequest: urlRequest) { data, error in
+             if let error = error {
+                 completionHandler(.failure(error))
+             } else if let data = data {
+                 self.decode(data, completionHandler: completionHandler)
+             }
+         }
+    }
+    
+    func downloadImage(withUrl urlString: String, completionHandler: @escaping ((Result<Data, NetworkError>) -> Void)) {
+        guard let url = URL(string: urlString) else { return }
+        let urlRequest = URLRequest(url: url)
+        dataTaskHandler(urlRequest: urlRequest) { data, error in
+            if let error = error {
+                completionHandler(.failure(error))
+            } else if let data = data {
+                completionHandler(.success(data))
+            }
+        }
+    }
+    
+    private func dataTaskHandler(urlRequest: URLRequest, completionHandler: @escaping ((Data?, NetworkError?) -> Void)) {
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard let responseStatus = response as? HTTPURLResponse, responseStatus.statusCode == 200 else {
-                completionHandler(.failure(NetworkError.responseError))
+                completionHandler(nil, NetworkError.responseError)
                 return
             }
-            
             guard let data = data, error == nil else {
-                completionHandler(.failure(NetworkError.responseError))
+                completionHandler(nil, NetworkError.responseError)
                 return
             }
-            
-            self.decode(data, completionHandler: completionHandler)
+            completionHandler(data, nil)
         }
         dataTask.resume()
     }
