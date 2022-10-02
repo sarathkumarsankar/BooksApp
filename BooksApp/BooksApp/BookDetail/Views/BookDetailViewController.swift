@@ -9,33 +9,46 @@ import UIKit
 
 final class BookDetailViewController: UIViewController {
     /// Private outlets
+    @IBOutlet weak var backGroundImageView: UIImageView!
     @IBOutlet private weak var bookImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var authorLabel: UILabel!
     @IBOutlet private weak var publishedDateLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
-    /// variable to hold passed data model
-    var bookData: Book?
-    
+    /// view model object
+    var dataViewModel: BooksDataViewModel?
+    var image: UIImage?
+
     /// ViewController life cycle- Called after the view has been loaded.
     override func viewDidLoad() {
         super.viewDidLoad()
-        bookImageView.setRoundCornerImage()
         updateUI()
     }
     
     /// update ui based on selected book
     private func updateUI() {
-        guard let book = bookData else {
+        bookImageView.setRoundCornerImage()
+        self.backGroundImageView.image = UIImage(named: "backgroundImage")
+        guard let viewModel = dataViewModel else {
             return
         }
-        self.title = book.bookName
-        self.nameLabel.text = book.bookName
-        self.descriptionLabel.text = book.description
-        self.authorLabel.text = book.author
-        self.descriptionLabel.text = book.description
-        if let image = book.image {
-            self.bookImageView.setImageUsingCache(withUrl: image)
+        self.title = viewModel.title
+        self.nameLabel.text = viewModel.title
+        self.descriptionLabel.text = viewModel.subtitle
+        self.authorLabel.text = viewModel.author
+        viewModel.delegate = self
+        viewModel.showImage()
+    }
+}
+
+// MARK: BooksDataViewModel Delegate method
+extension BookDetailViewController: BooksDataViewModelDelegate {
+    func didImageDownload(data: Data?, error: String?) {
+        guard let data = data, let image = UIImage(data: data) else {
+            return
+        }
+        DispatchQueue.main.async {
+            self.bookImageView.image = image
         }
     }
 }

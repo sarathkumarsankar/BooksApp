@@ -102,7 +102,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="cZi-IL-L2J">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cZi-IL-L2J">
                                 <rect key="frame" x="0.0" y="44" width="414" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="vlF-bM-dpK"/>
@@ -214,6 +214,7 @@
                     <navigationItem key="navigationItem" id="5pw-H1-iGO"/>
                     <connections>
                         <outlet property="authorLabel" destination="ZSp-cW-T1n" id="Ag7-kF-qVW"/>
+                        <outlet property="backGroundImageView" destination="cZi-IL-L2J" id="Jin-HZ-sSa"/>
                         <outlet property="bookImageView" destination="YEL-xS-CLS" id="3RP-2D-MU0"/>
                         <outlet property="descriptionLabel" destination="QNS-sg-pNf" id="7cQ-yH-LLr"/>
                         <outlet property="nameLabel" destination="F37-VI-Q94" id="kjn-KL-itH"/>
@@ -244,7 +245,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backgroundImage" width="2000" height="1125"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -7,14 +7,17 @@
 
 import Foundation
 
+/// API Base url constants
 struct BooksAPIConstants {
     static let baseUrl = "run.mocky.io"
 }
 
+/// Tableview cell identifier
 struct TableViewCellIdentifier {
     static let booksTableViewCell = "BooksTableViewCell"
 }
 
-struct ViewControllerTitle {
+/// Navigation bar titile
+struct NavigationBarTitle {
     static let booksVC = "Books"
 }
