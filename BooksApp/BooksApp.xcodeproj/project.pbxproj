@@ -34,7 +34,7 @@
 		0A8C41F228E6C3C900ACD649 /* books_error.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8C41F128E6C3C900ACD649 /* books_error.json */; };
 		0A8C41F628E6C55100ACD649 /* books_empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A8C41F528E6C55100ACD649 /* books_empty.json */; };
 		0A8C421A28E8793800ACD649 /* NetworkStateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C421928E8793800ACD649 /* NetworkStateCheck.swift */; };
-		0A8C422228E9705F00ACD649 /* BooksCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C422128E9705F00ACD649 /* BooksCellViewModelTests.swift */; };
+		0A8C422228E9705F00ACD649 /* BooksDataViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C422128E9705F00ACD649 /* BooksDataViewModelTests.swift */; };
 		0A8C422628E9A6D400ACD649 /* MockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C422528E9A6D400ACD649 /* MockDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +87,7 @@
 		0A8C41F128E6C3C900ACD649 /* books_error.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = books_error.json; sourceTree = "<group>"; };
 		0A8C41F528E6C55100ACD649 /* books_empty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = books_empty.json; sourceTree = "<group>"; };
 		0A8C421928E8793800ACD649 /* NetworkStateCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStateCheck.swift; sourceTree = "<group>"; };
-		0A8C422128E9705F00ACD649 /* BooksCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCellViewModelTests.swift; sourceTree = "<group>"; };
+		0A8C422128E9705F00ACD649 /* BooksDataViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksDataViewModelTests.swift; sourceTree = "<group>"; };
 		0A8C422528E9A6D400ACD649 /* MockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,7 +159,7 @@
 				0A823D2328E45926008CEF4C /* Mock */,
 				0A823D2128E45767008CEF4C /* BooksMockService.swift */,
 				0A823D2A28E4AF54008CEF4C /* BooksViewModelTests.swift */,
-				0A8C422128E9705F00ACD649 /* BooksCellViewModelTests.swift */,
+				0A8C422128E9705F00ACD649 /* BooksDataViewModelTests.swift */,
 				0A8C422528E9A6D400ACD649 /* MockDelegate.swift */,
 			);
 			path = BooksAppTests;
@@ -433,7 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A8C422228E9705F00ACD649 /* BooksCellViewModelTests.swift in Sources */,
+				0A8C422228E9705F00ACD649 /* BooksDataViewModelTests.swift in Sources */,
 				0A8C41E628E5B90700ACD649 /* BooksMockService.swift in Sources */,
 				0A8C422628E9A6D400ACD649 /* MockDelegate.swift in Sources */,
 				0A823D2B28E4AF54008CEF4C /* BooksViewModelTests.swift in Sources */,
