@@ -83,7 +83,10 @@ class NetworkManager {
     }
     
     func downloadImage(withUrl urlString: String, completionHandler: @escaping ((Result<Data, NetworkError>) -> Void)) {
-        guard let url = URL(string: urlString) else { return }
+        guard let url = URL(string: urlString) else {
+            completionHandler(.failure(.invalidURL))
+            return
+        }
         let urlRequest = URLRequest(url: url)
         dataTaskHandler(urlRequest: urlRequest) { data, error in
             if let error = error {
