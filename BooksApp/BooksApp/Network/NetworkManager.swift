@@ -16,8 +16,9 @@ enum Endpoint: String {
 enum NetworkError: Error {
     case invalidURL
     case responseError
-    case unknown
+    case somethingWentWrong
     case decodeError
+    case unreachable
 }
 
 extension NetworkError {
@@ -28,10 +29,12 @@ extension NetworkError {
             return "Invalid URL"
         case .responseError:
             return "Invalid response"
-        case .unknown:
-            return "Unknown error"
+        case .somethingWentWrong:
+            return "Something went wrong, please try again later"
         case .decodeError:
-            return "Decode error"
+            return "Failed to parse data."
+        case .unreachable:
+            return "Please check your internet connection."
         }
     }
 }
@@ -48,6 +51,12 @@ class NetworkManager {
     ///   - type: Place holder for model type
     ///   - completionHandler: result types which includes success and failure data
      func excute<T : Decodable>(with endpoint: HTTPRequest, type: T.Type, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) {
+         
+         guard NetworkStateCheck.isConnectedToNetwork() else {
+             completionHandler(.failure(.unreachable))
+             return
+         }
+
          var components = URLComponents()
          components.scheme = endpoint.scheme
          components.host = endpoint.baseURL
@@ -88,7 +97,7 @@ class NetworkManager {
     private func dataTaskHandler(urlRequest: URLRequest, completionHandler: @escaping ((Data?, NetworkError?) -> Void)) {
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard let responseStatus = response as? HTTPURLResponse, responseStatus.statusCode == 200 else {
-                completionHandler(nil, NetworkError.responseError)
+                completionHandler(nil, NetworkError.somethingWentWrong)
                 return
             }
             guard let data = data, error == nil else {
