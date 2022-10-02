@@ -26,14 +26,28 @@ final class BooksTableViewCell: UITableViewCell {
     
     /// Configure cell with data
     /// - Parameter cellViewModel: BooksCell viewmodel
-    func configureCell(cellViewModel: BooksCellViewModel?) {
+    func configureCell(cellViewModel: BooksDataViewModel?) {
         bookNameLabel.text = cellViewModel?.title
         bookDescriptionLabel.text = cellViewModel?.subtitle
-        booksImageView.setImageUsingCache(withUrl: cellViewModel?.imageUrString)
+        cellViewModel?.delegate = self
+        self.booksImageView.image = UIImage(named: "placeholder")
+        cellViewModel?.showImage()
     }
         
     private func initView() {
         booksImageView.setRoundCornerImage()
     }
     
+}
+
+// MARK: BooksTableViewCell Delegate method
+extension BooksTableViewCell: BooksDataViewModelDelegate {
+    func didImageDownload(data: Data?, error: String?) {
+        guard let data = data, let image = UIImage(data: data) else {
+            return
+        }
+        DispatchQueue.main.async {
+            self.booksImageView.image = image
+        }
+    }
 }

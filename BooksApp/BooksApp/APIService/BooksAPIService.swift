@@ -7,10 +7,10 @@
 
 import Foundation
 
-
 /// Protocol used for dependancy injection
 protocol BooksServiceProtocol {
     func booksService(endPoint: Endpoint, completionHandler: @escaping ((Result<Books, NetworkError>) -> Void))
+    func downloadImageService(withUrl urlString: String, completionHandler: @escaping ((Result<Data, NetworkError>) -> Void))
 }
 
 /// Enum for book service endpoints
@@ -30,6 +30,9 @@ extension BooServiceEndpoints: HTTPRequest {
 
 /// API service layer
 struct BooksAPIService: BooksServiceProtocol {
+    /// variable for caching downlaoded images
+    private let imageCache = NSCache<NSString, NSData>()
+
     /// Function to get list of books
     /// - Parameters:
     ///   - endPoint: api end point url
@@ -45,4 +48,27 @@ struct BooksAPIService: BooksServiceProtocol {
             }
         }
     }
+    
+    /// download image and save to cache
+    /// - Parameters:
+    ///   - urlString: image url sting
+    ///   - completionHandler: result type which includes success(image data) and error
+    func downloadImageService(withUrl urlString: String, completionHandler: @escaping ((Result<Data, NetworkError>) -> Void)) {
+        /// check image already available in cache
+        if let cachedImage = imageCache.object(forKey: urlString as NSString) {
+            completionHandler(.success(cachedImage as Data))
+            return
+        }
+        NetworkManager.shared.downloadImage(withUrl: urlString) { result in
+            switch result {
+            case .success(let data):
+                /// store image in cache
+                self.imageCache.setObject(data as NSData, forKey: urlString as NSString)
+                completionHandler(.success(data))
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
+    }
+
 }
