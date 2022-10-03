@@ -8,6 +8,12 @@ iOS 15.5
 Swift 5
 MVVM Design pattern
 ```
+### Features
+- Data Binding in MVVM
+- Dependency Injection in Swift
+- Helpers for Reusable functions
+- Mocking Network Calls
+- Extensions
 
 # API used
 
@@ -26,3 +32,4 @@ https://run.mocky.io/v3/48d1cc9f-b6be-42ec-9c69-81787a391b98
 - open BoosApp.xcodeproj
 - select simulator
 - Run
+
