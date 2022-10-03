@@ -7,11 +7,6 @@
 
 import Foundation
 
-/// API Base url constants
-struct BooksAPIConstants {
-    static let baseUrl = "run.mocky.io"
-}
-
 /// Tableview cell identifier
 struct TableViewCellIdentifier {
     static let booksTableViewCell = "BooksTableViewCell"
@@ -20,4 +15,10 @@ struct TableViewCellIdentifier {
 /// Navigation bar titile
 struct NavigationBarTitle {
     static let booksVC = "Books"
+}
+
+/// Image constants
+enum ImageConstants: String {
+    case backGroundImage = "backgroundImage"
+    case placeHolderImage = "placeholder"
 }

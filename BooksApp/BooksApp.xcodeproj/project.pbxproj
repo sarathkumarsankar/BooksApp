@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A533AD128EAF15300E1497C /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A533AD028EAF15300E1497C /* NetworkConstants.swift */; };
 		0A823CD228E40022008CEF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823CD128E40022008CEF4C /* AppDelegate.swift */; };
 		0A823CD428E40022008CEF4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A823CD328E40022008CEF4C /* SceneDelegate.swift */; };
 		0A823CD928E40022008CEF4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A823CD728E40022008CEF4C /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A533AD028EAF15300E1497C /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		0A823CCE28E40022008CEF4C /* BooksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BooksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A823CD128E40022008CEF4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A823CD328E40022008CEF4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			children = (
 				0A823D1028E40061008CEF4C /* NetworkManager.swift */,
 				0A8C41E728E5BAF700ACD649 /* HTTPRequest.swift */,
+				0A533AD028EAF15300E1497C /* NetworkConstants.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A533AD128EAF15300E1497C /* NetworkConstants.swift in Sources */,
 				0A823D1E28E442CA008CEF4C /* BooksTableViewCell.swift in Sources */,
 				0A823D1C28E420DF008CEF4C /* Observable.swift in Sources */,
 				0A823D2028E44951008CEF4C /* UIViewController+Extensions.swift in Sources */,

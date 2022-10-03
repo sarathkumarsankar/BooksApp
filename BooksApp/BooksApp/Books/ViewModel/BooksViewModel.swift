@@ -21,7 +21,7 @@ final class BooksViewModel {
     
     /// Get the books list from API
     func getBooks() {
-        serviceManager?.booksService(endPoint: .books, completionHandler: { result in
+        serviceManager?.booksService(completionHandler: { result in
             switch result {
             case .success(let result):
                 ///Map books into array  of cell viewModel

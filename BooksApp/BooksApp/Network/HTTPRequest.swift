@@ -7,6 +7,11 @@
 
 import Foundation
 
+/// API Base url constants
+struct BooksAPIConstants {
+    static let baseUrl = "run.mocky.io"
+}
+
 // MARK: - HTTP Headers
 enum HTTPHeader {
     case contentType(String)

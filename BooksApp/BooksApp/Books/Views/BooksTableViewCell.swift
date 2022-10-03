@@ -30,7 +30,7 @@ final class BooksTableViewCell: UITableViewCell {
         bookNameLabel.text = cellViewModel?.title
         bookDescriptionLabel.text = cellViewModel?.subtitle
         cellViewModel?.delegate = self
-        self.booksImageView.image = UIImage(named: "placeholder")
+        self.booksImageView.image = UIImage(named: ImageConstants.placeHolderImage.rawValue)
         cellViewModel?.showImage()
     }
         

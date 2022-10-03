@@ -7,11 +7,6 @@
 
 import Foundation
 
-/// Enum for api end points
-enum Endpoint: String {
-    case books = "48d1cc9f-b6be-42ec-9c69-81787a391b98"
-}
-
 /// Enum for possible error cases
 enum NetworkError: Error {
     case invalidURL
@@ -26,15 +21,15 @@ extension NetworkError {
     var errorDescription: String? {
         switch self {
         case .invalidURL:
-            return "Invalid URL"
+            return NetworkConstants.invalidURL
         case .responseError:
-            return "Invalid response"
+            return NetworkConstants.responseError
         case .somethingWentWrong:
-            return "Something went wrong, please try again later"
+            return NetworkConstants.somethingWentWrong
         case .decodeError:
-            return "Failed to parse data."
+            return NetworkConstants.decodeError
         case .unreachable:
-            return "Please check your internet connection."
+            return NetworkConstants.unreachable
         }
     }
 }

@@ -27,7 +27,7 @@ final class BookDetailViewController: UIViewController {
     /// update ui based on selected book
     private func updateUI() {
         bookImageView.setRoundCornerImage()
-        self.backGroundImageView.image = UIImage(named: "backgroundImage")
+        self.backGroundImageView.image = UIImage(named: ImageConstants.backGroundImage.rawValue)
         guard let viewModel = dataViewModel else {
             return
         }
