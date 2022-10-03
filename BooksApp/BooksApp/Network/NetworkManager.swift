@@ -82,6 +82,10 @@ class NetworkManager {
          }
     }
     
+    /// Download image with image url
+    /// - Parameters:
+    ///   - urlString: image url
+    ///   - completionHandler: return type with image data and error
     func downloadImage(withUrl urlString: String, completionHandler: @escaping ((Result<Data, NetworkError>) -> Void)) {
         guard let url = URL(string: urlString) else {
             completionHandler(.failure(.invalidURL))

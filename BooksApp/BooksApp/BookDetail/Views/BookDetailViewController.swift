@@ -9,7 +9,7 @@ import UIKit
 
 final class BookDetailViewController: UIViewController {
     /// Private outlets
-    @IBOutlet weak var backGroundImageView: UIImageView!
+    @IBOutlet private weak var backGroundImageView: UIImageView!
     @IBOutlet private weak var bookImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var authorLabel: UILabel!
@@ -17,7 +17,6 @@ final class BookDetailViewController: UIViewController {
     @IBOutlet private weak var descriptionLabel: UILabel!
     /// view model object
     var dataViewModel: BooksDataViewModel?
-    var image: UIImage?
 
     /// ViewController life cycle- Called after the view has been loaded.
     override func viewDidLoad() {

@@ -144,7 +144,8 @@
 				0A823D0128E40045008CEF4C /* Books */,
 				0A823D0B28E40058008CEF4C /* BookDetail */,
 				0A823D0F28E40061008CEF4C /* Network */,
-				0A823D1128E40062008CEF4C /* Utils */,
+				0A823D1128E40062008CEF4C /* Helper */,
+				0AA4C2E328EA8EB9002C9928 /* Extensions */,
 				0A823CD128E40022008CEF4C /* AppDelegate.swift */,
 				0A823CD328E40022008CEF4C /* SceneDelegate.swift */,
 				0A823CDA28E40024008CEF4C /* Assets.xcassets */,
@@ -235,17 +236,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		0A823D1128E40062008CEF4C /* Utils */ = {
+		0A823D1128E40062008CEF4C /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				0A823D1228E40062008CEF4C /* UIImageView+Extensions.swift */,
 				0A823D1928E4070A008CEF4C /* Constants.swift */,
 				0A823D1B28E420DF008CEF4C /* Observable.swift */,
-				0A823D1F28E44951008CEF4C /* UIViewController+Extensions.swift */,
 				0A823D2828E482EC008CEF4C /* StoryBoardHelper.swift */,
 				0A8C421928E8793800ACD649 /* NetworkStateCheck.swift */,
 			);
-			path = Utils;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		0A823D1528E40070008CEF4C /* StoryBoard */ = {
@@ -273,6 +272,15 @@
 				0A8C41F528E6C55100ACD649 /* books_empty.json */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		0AA4C2E328EA8EB9002C9928 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0A823D1F28E44951008CEF4C /* UIViewController+Extensions.swift */,
+				0A823D1228E40062008CEF4C /* UIImageView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
