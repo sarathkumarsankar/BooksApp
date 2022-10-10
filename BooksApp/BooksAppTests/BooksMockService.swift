@@ -29,7 +29,7 @@ class BooksMockService: BooksServiceProtocol {
     /// - Parameters:
     ///   - endPoint:api end point url
     ///   - completionHandler: returns result types which includes success(Books) and failure data
-    func booksService(endPoint: Endpoint, completionHandler: @escaping ((Result<Books, NetworkError>) -> Void)) {
+    func booksService(completionHandler: @escaping ((Result<Books, NetworkError>) -> Void)) {
         isBooksServiceMethodCalled = true
         guard
             let url = Bundle.main.url(forResource: responseFileName?.rawValue, withExtension: "json"),
