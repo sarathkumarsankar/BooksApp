@@ -23,7 +23,7 @@ extension BooServiceEndpoints: HTTPRequest {
     var path: String {
         switch self {
         case .getBooks:
-            return "/v3/48d1cc9f-b6be-42ec-9c69-81787a391b98"
+            return "/v3/98bd191b-c63a-40b0-acbe-1fa0b5d1ab47"
         }
     }
 }
