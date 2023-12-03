@@ -1,4 +1,7 @@
 # BooksApp
+<img width="230" alt="Screenshot 2023-12-03 at 17 03 33" src="https://github.com/sarathkumarsankar/BooksApp/assets/12977299/aca94209-96ba-4f2b-94ac-a706c3fb8f92">
+<img width="230" alt="Screenshot 2023-12-03 at 17 03 20" src="https://github.com/sarathkumarsankar/BooksApp/assets/12977299/106cbbe3-f796-4f4b-8c96-88a39dac6360">
+
 
 A Simple app shows list of books and details view
 
